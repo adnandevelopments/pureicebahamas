@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ice text-white">
+    <footer className="relative overflow-hidden bg-ice text-white ">
       <div className="relative z-10 mx-auto grid max-w-[1100px] gap-10 px-6 pt-14 pb-10 sm:grid-cols-2 lg:grid-cols-4">
         <Logo className="h-14 w-auto" />
 
@@ -33,7 +33,10 @@ export function Footer() {
           <p className="text-xs font-semibold tracking-[0.16em]">CONTACT US</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <a href="tel:+15573423423" className="inline-flex items-center gap-2 hover:text-white/80">
+              <a
+                href="tel:+15573423423"
+                className="inline-flex items-center gap-2 hover:text-white/80"
+              >
                 <PhoneIcon />
                 557 - 3ICE (423)
               </a>
@@ -51,9 +54,15 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold tracking-[0.16em]">WE ARE SOCIAL</p>
+          <p className="text-xs font-semibold tracking-[0.16em]">
+            WE ARE SOCIAL
+          </p>
           <div className="mt-4 flex gap-3">
-            <a href="https://wa.me/15573423423" aria-label="WhatsApp" className="hover:text-white/80">
+            <a
+              href="https://wa.me/15573423423"
+              aria-label="WhatsApp"
+              className="hover:text-white/80"
+            >
               <SocialBubble>
                 <path d="M12 6.2A5.7 5.7 0 0 0 7.2 14.8l-.7 2.4 2.5-.7A5.8 5.8 0 1 0 12 6.2zm3.2 8c-.14.38-.8.7-1.1.75-.28.04-.63.06-1.02-.06-.23-.07-.53-.17-.92-.34-1.63-.7-2.7-2.34-2.78-2.45-.08-.11-.67-.89-.67-1.7 0-.8.42-1.2.58-1.36.15-.17.33-.2.44-.2h.32c.1 0 .24-.04.37.28.14.34.47 1.16.5 1.24.04.08.07.18.02.29-.05.11-.08.18-.16.28-.08.1-.16.21-.23.28-.08.08-.16.16-.07.32.09.15.39.64.84 1.03.57.51 1.06.67 1.2.75.15.07.24.06.33-.04.09-.11.37-.43.47-.58.1-.15.2-.12.33-.07.14.05.86.4 1.01.48.15.07.25.11.28.17.04.06.04.35-.1.73z" />
               </SocialBubble>
@@ -83,7 +92,10 @@ export function Footer() {
           <Link href="/privacy" className="hover:underline">
             Privacy Policy
           </Link>
-          <span> &nbsp;|&nbsp; Copyright © 2024 Pure Ice All Rights Reserved</span>
+          <span>
+            {" "}
+            &nbsp;|&nbsp; Copyright © 2024 Pure Ice All Rights Reserved
+          </span>
         </p>
       </div>
     </footer>
@@ -92,7 +104,12 @@ export function Footer() {
 
 function SocialBubble({ children }: { children: ReactNode }) {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-7 w-7"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       {children}
     </svg>
   );
@@ -100,7 +117,12 @@ function SocialBubble({ children }: { children: ReactNode }) {
 
 function PhoneIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       <path d="M7.2 3.6h2l1 2.6-1.5 1a11.4 11.4 0 0 0 5.5 5.5l1-1.5 2.6 1v2c0 .6-.4 1.1-1 1.2A12.8 12.8 0 0 1 6 4.6c.1-.6.6-1 1.2-1z" />
     </svg>
   );
@@ -108,7 +130,14 @@ function PhoneIcon() {
 
 function MailIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
       <rect x="3.5" y="5.5" width="17" height="13" rx="1.5" />
       <path d="m4.5 7 7.5 6L19.5 7" />
     </svg>
