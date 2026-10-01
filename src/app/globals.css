@@ -3,7 +3,7 @@
 @theme inline {
   --color-ice: #2ba9de;
   --color-ice-deep: #1e96c8;
-  --font-sans: var(--font-montserrat);
+  --font-sans: var(--font-arimo);
 }
 
 html {
@@ -13,5 +13,7 @@ html {
 body {
   background: #ffffff;
   color: #2ba9de;
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-arimo), sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
 }

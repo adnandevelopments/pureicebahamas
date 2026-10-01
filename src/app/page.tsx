@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HighlightIcon, PlaceIcon } from "@/components/Icons";
 
 const highlights = [
   { title: "Top quality ice freezers", icon: "check" },
@@ -39,50 +40,57 @@ const places = [
 ] as const;
 
 const bags = [
-  { src: "/images/ice10.png", label: "10 Pounds", width: 900, height: 1260, className: "h-48 sm:h-56" },
-  { src: "/images/ice20.png", label: "20 Pounds", width: 1236, height: 1732, className: "h-56 sm:h-72" },
-  { src: "/images/ice40.png", label: "40 Pounds", width: 1624, height: 2053, className: "h-64 sm:h-80" },
+  { src: "/images/ice10.png", label: "10 Pounds", width: 900, height: 1260, className: "h-28 sm:h-56" },
+  { src: "/images/ice20.png", label: "20 Pounds", width: 1236, height: 1732, className: "h-32 sm:h-72" },
+  { src: "/images/ice40.png", label: "40 Pounds", width: 1624, height: 2053, className: "h-36 sm:h-80" },
 ];
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <section className="relative overflow-hidden bg-[#8ed4f3] text-white">
+      <main className="bg-ice">
+        <section className="relative text-white">
           <Image
-            src="/images/hero-ice.png"
+            src="/images/bg1.png"
             alt=""
-            width={420}
-            height={270}
+            width={1855}
+            height={848}
             priority
-            className="pointer-events-none absolute top-0 right-0 h-full w-[70%] max-w-none object-cover object-left sm:w-[58%]"
+            sizes="100vw"
+            className="block h-[300px] w-full object-cover object-[center_35%] sm:h-[380px] md:h-auto md:object-contain"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#7ecff2] via-[#8ed4f3]/85 to-transparent" />
-          <div className="relative mx-auto flex min-h-[420px] max-w-[1200px] flex-col justify-center px-6 py-16 md:min-h-[520px] md:px-10">
-            <p className="text-3xl font-light tracking-[0.18em] sm:text-5xl">KEEPING YOU</p>
-            <p className="mt-1 text-6xl font-light tracking-wide sm:text-8xl">COOL</p>
-            <p className="mt-2 text-xl font-light tracking-[0.12em] sm:text-3xl">
-              in the <span className="uppercase">Bahamas</span>
-            </p>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent via-ice/30 to-ice sm:h-28 md:h-56" />
+          <div className="absolute inset-0 flex items-center pb-8 sm:pb-12 md:pb-24">
+            <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-6 md:px-10">
+              <p className="text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
+                KEEPING YOU
+              </p>
+              <p className="mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-7xl md:text-8xl">
+                COOL
+              </p>
+              <p className="mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
+                in the <span className="uppercase">Bahamas</span>
+              </p>
+            </div>
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-20 bg-ice text-white">
-          <div className="mx-auto grid max-w-[1100px] items-center gap-10 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-20">
+        <section id="about" className="relative z-10 -mt-px scroll-mt-20 bg-ice text-white">
+          <div className="mx-auto grid max-w-[1100px] items-center gap-8 px-6 pb-16 md:grid-cols-[0.9fr_1.1fr] md:pb-20">
             <Image
-              src="/images/iceBag.png"
+              src="/images/iceBag1.png"
               alt="Pure Ice freezer and bagged ice"
               width={3116}
               height={4184}
-              className="mx-auto h-auto w-full max-w-md"
+              className="relative z-10 mx-auto -mt-8 h-auto w-full max-w-[260px] sm:-mt-[8vw] sm:max-w-[420px] md:-mt-[11vw] md:max-w-md"
             />
             <div>
-              <p className="text-sm font-medium">About Us</p>
-              <h1 className="mt-1 text-2xl font-semibold tracking-wide sm:text-3xl">
+              <p className="text-base font-medium">About Us</p>
+              <h1 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
                 WE&apos;VE GOT HIGH STANDARDS
               </h1>
-              <div className="mt-5 space-y-4 text-sm leading-7 text-white/95 sm:text-[15px]">
+              <div className="mt-5 space-y-4 text-[15px] leading-7 text-white sm:text-base">
                 <p>
                   Pure Ice has arrived in the Bahamas to serve clients with the purest and clearest ice.
                   With our local production facilities and our all-inclusive ice program, we are happy to
@@ -101,27 +109,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="products" className="scroll-mt-20 bg-ice pb-16 text-white">
+        <section id="products" className="relative z-10 scroll-mt-20 bg-ice pt-6 pb-16 text-white md:pt-8">
           <div className="mx-auto max-w-[1100px] px-6">
-            <p className="text-sm font-medium">Our Products</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-wide sm:text-3xl">
+            <p className="text-base font-medium">Our Products</p>
+            <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
               HOW COOL DO YOU WANT TO BE?
             </h2>
-            <div className="mt-10 grid grid-cols-3 items-end gap-4 sm:gap-8">
+            <div className="mt-10 grid grid-cols-3 items-end gap-2 sm:gap-8">
               {bags.map((bag) => (
-                <figure key={bag.label} className="text-center">
+                <figure key={bag.label} className="min-w-0 text-center">
                   <Image
                     src={bag.src}
                     alt={`${bag.label} bag of Pure Ice`}
                     width={bag.width}
                     height={bag.height}
-                    className={`mx-auto w-auto object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
+                    className={`mx-auto w-auto max-w-full object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
                   />
                   <figcaption className="mt-4 text-sm font-medium sm:text-lg">{bag.label}</figcaption>
                 </figure>
               ))}
             </div>
-            <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-sm leading-7 text-white/95">
+            <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-[15px] leading-7 text-white sm:text-base">
               <p>
                 You no longer have to choose between purchasing a costly, maintenance-intensive piece of
                 equipment or entering into a standard ice machine rental or leasing contract, both of which
@@ -135,12 +143,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-ice pb-20 text-white">
+        <section className="relative z-10 -mt-px bg-ice pb-20 text-white">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="text-xl font-semibold tracking-[0.08em] sm:text-2xl">
               OUR ALL-INCLUSIVE PROGRAM HIGHLIGHTS
             </h2>
-            <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-sm sm:text-base">
+            <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[15px] sm:text-base">
               {highlights.map((item) => (
                 <li key={item.title} className="flex items-center gap-4">
                   <HighlightIcon name={item.icon} />
@@ -157,33 +165,33 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="find" className="scroll-mt-20 bg-white">
-          <div className="mx-auto max-w-[1000px] px-6 py-16 text-center md:py-20">
-            <p className="text-sm font-medium text-ice">Where to Find Us</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-wide text-ice sm:text-3xl">
+        <section id="find" className="relative z-10 -mt-px scroll-mt-20 bg-white">
+          <div className="mx-auto max-w-[1100px] px-6 py-16 md:py-20">
+            <p className="text-base font-medium text-ice">Where to Find Us</p>
+            <h2 className="mt-1 text-3xl font-semibold tracking-wide text-ice sm:text-4xl">
               FIND OUR ICE IN MORE PLACES THAN EVER BEFORE
             </h2>
             <div className="mt-12 grid gap-12 sm:grid-cols-2">
               {places.map((place) => (
-                <article key={place.id} id={place.id} className="scroll-mt-24 px-4">
+                <article key={place.id} id={place.id} className="scroll-mt-24 px-4 text-center">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center text-ice">
                     <PlaceIcon name={place.icon} />
                   </div>
-                  <h3 className="text-sm font-semibold tracking-[0.14em] text-ice uppercase">
+                  <h3 className="text-base font-semibold tracking-[0.12em] text-ice uppercase sm:text-lg">
                     {place.title}
                   </h3>
-                  <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-ice">{place.body}</p>
+                  <p className="mx-auto mt-3 max-w-sm text-[15px] leading-7 text-ice">{place.body}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-20 bg-ice py-16 text-white md:py-20">
+        <section id="contact" className="relative z-10 -mt-px scroll-mt-20 bg-ice py-16 text-white md:py-20">
           <div className="mx-auto max-w-[1100px] px-6 text-center">
-            <p className="text-sm font-medium">Contact Us</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-wide sm:text-3xl">WE ARE COOL FOR YOU</h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7">
+            <p className="text-base font-medium">Contact Us</p>
+            <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">WE ARE COOL FOR YOU</h2>
+            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-7 sm:text-base">
               Let us help you stay cool. Whether it is an all-inclusive ice program or a delivery, we are
               here for you.
             </p>
@@ -196,88 +204,3 @@ export default function Home() {
   );
 }
 
-function HighlightIcon({ name }: { name: (typeof highlights)[number]["icon"] }) {
-  const common = "h-7 w-7 shrink-0";
-  if (name === "check") {
-    return (
-      <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-        <circle cx="12" cy="12" r="8.5" />
-        <path d="m8.5 12.2 2.3 2.3 4.7-5" />
-      </svg>
-    );
-  }
-  if (name === "truck") {
-    return (
-      <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-        <path d="M3 7.5h11v8H3zM14 10h4l3 3v2.5h-7z" />
-        <circle cx="7" cy="17.2" r="1.4" />
-        <circle cx="17.2" cy="17.2" r="1.4" />
-      </svg>
-    );
-  }
-  if (name === "spark") {
-    return (
-      <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-        <path d="M12 3.5 13.4 9 19 10.5 13.4 12 12 17.5 10.6 12 5 10.5 10.6 9 12 3.5z" />
-        <path d="m17.5 15 .6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6.6-2z" />
-      </svg>
-    );
-  }
-  if (name === "gear") {
-    return (
-      <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 3.8v2.1M12 18.1v2.1M4.8 7.2l1.8 1.1M17.4 15.7l1.8 1.1M4.8 16.8l1.8-1.1M17.4 8.3l1.8-1.1" />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 24 24" className={common} fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <path d="M7 8.5h10l-1 10H8L7 8.5z" />
-      <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" />
-    </svg>
-  );
-}
-
-function PlaceIcon({ name }: { name: (typeof places)[number]["icon"] }) {
-  const common = "h-14 w-14";
-  if (name === "bags") {
-    return (
-      <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <path d="M18 28h16l-2 22H20L18 28z" />
-        <path d="M22 28v-3a4 4 0 0 1 8 0v3" />
-        <path d="M30 24h16l-2 26H32" />
-        <path d="M34 24v-2a3.5 3.5 0 0 1 7 0v2" />
-      </svg>
-    );
-  }
-  if (name === "dining") {
-    return (
-      <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <path d="M24 16v12a4 4 0 0 0 8 0V16" />
-        <path d="M28 28v20" />
-        <path d="M24 16v6M28 16v6M32 16v6" />
-        <circle cx="42" cy="28" r="7" />
-        <path d="M42 35v13" />
-      </svg>
-    );
-  }
-  if (name === "cart") {
-    return (
-      <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <path d="M14 20h28l4 16H20L14 20z" />
-        <path d="M18 20 14 12H8" />
-        <circle cx="24" cy="44" r="3" />
-        <circle cx="40" cy="44" r="3" />
-        <path d="M36 16v8M32 20h8" />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M12 28 32 14l20 14v22H12V28z" />
-      <path d="M26 50V34h12v16" />
-      <path d="M20 28h24" />
-    </svg>
-  );
-}
