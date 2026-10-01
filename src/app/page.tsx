@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HighlightIcon, PlaceIcon } from "@/components/Icons";
+import { Reveal } from "@/components/Reveal";
 
 const highlights = [
   { title: "Top quality ice freezers", icon: "check" },
@@ -63,13 +64,13 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent via-ice/30 to-ice sm:h-28 md:h-56" />
           <div className="absolute inset-0 flex items-center pb-8 sm:pb-12 md:pb-24">
             <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-6 md:px-10">
-              <p className="text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
+              <p className="hero-line text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
                 KEEPING YOU
               </p>
-              <p className="mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-7xl md:text-8xl">
+              <p className="hero-cool mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:220ms] sm:text-7xl md:text-8xl">
                 COOL
               </p>
-              <p className="mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
+              <p className="hero-line mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:520ms] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
                 in the <span className="uppercase">Bahamas</span>
               </p>
             </div>
@@ -83,9 +84,9 @@ export default function Home() {
               alt="Pure Ice freezer and bagged ice"
               width={3116}
               height={4184}
-              className="relative z-10 mx-auto -mt-8 h-auto w-full max-w-[260px] sm:-mt-[8vw] sm:max-w-[420px] md:-mt-[11vw] md:max-w-md"
+              className="load-rise relative z-10 mx-auto -mt-8 h-auto w-full max-w-[260px] [animation-delay:280ms] sm:-mt-[8vw] sm:max-w-[420px] md:-mt-[11vw] md:max-w-md"
             />
-            <div>
+            <div className="load-rise [animation-delay:420ms]">
               <p className="text-base font-medium">About Us</p>
               <h1 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
                 WE&apos;VE GOT HIGH STANDARDS
@@ -111,13 +112,16 @@ export default function Home() {
 
         <section id="products" className="relative z-10 scroll-mt-20 bg-ice pt-6 pb-16 text-white md:pt-8">
           <div className="mx-auto max-w-[1100px] px-6">
-            <p className="text-base font-medium">Our Products</p>
-            <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
-              HOW COOL DO YOU WANT TO BE?
-            </h2>
+            <Reveal>
+              <p className="text-base font-medium">Our Products</p>
+              <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
+                HOW COOL DO YOU WANT TO BE?
+              </h2>
+            </Reveal>
             <div className="mt-10 grid grid-cols-3 items-end gap-2 sm:gap-8">
-              {bags.map((bag) => (
-                <figure key={bag.label} className="min-w-0 text-center">
+              {bags.map((bag, index) => (
+                <Reveal key={bag.label} delay={index * 90} className="min-w-0 text-center">
+                <figure>
                   <Image
                     src={bag.src}
                     alt={`${bag.label} bag of Pure Ice`}
@@ -127,9 +131,10 @@ export default function Home() {
                   />
                   <figcaption className="mt-4 text-sm font-medium sm:text-lg">{bag.label}</figcaption>
                 </figure>
+                </Reveal>
               ))}
             </div>
-            <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-[15px] leading-7 text-white sm:text-base">
+            <Reveal className="mx-auto mt-10 max-w-3xl space-y-4 text-left text-[15px] leading-7 text-white sm:text-base">
               <p>
                 You no longer have to choose between purchasing a costly, maintenance-intensive piece of
                 equipment or entering into a standard ice machine rental or leasing contract, both of which
@@ -139,41 +144,50 @@ export default function Home() {
                 We provide a cooler answer. Our all-inclusive ice program includes top-notch ice freezers
                 that will keep your ice cool, as well as restocking and equipment repairs.
               </p>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         <section className="relative z-10 -mt-px bg-ice pb-20 text-white">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-xl font-semibold tracking-[0.08em] sm:text-2xl">
-              OUR ALL-INCLUSIVE PROGRAM HIGHLIGHTS
-            </h2>
+            <Reveal>
+              <h2 className="text-left text-xl font-semibold tracking-[0.08em] sm:text-center sm:text-2xl">
+                OUR ALL-INCLUSIVE PROGRAM HIGHLIGHTS
+              </h2>
+            </Reveal>
             <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[15px] sm:text-base">
-              {highlights.map((item) => (
-                <li key={item.title} className="flex items-center gap-4">
-                  <HighlightIcon name={item.icon} />
-                  <span>{item.title}</span>
+              {highlights.map((item, index) => (
+                <li key={item.title}>
+                  <Reveal delay={index * 70} className="flex items-center gap-4">
+                    <HighlightIcon name={item.icon} />
+                    <span>{item.title}</span>
+                  </Reveal>
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
-              className="mt-10 inline-flex rounded-sm bg-white px-10 py-2.5 text-sm font-medium text-ice hover:bg-white/90"
-            >
-              Buy Now
-            </a>
+            <Reveal>
+              <a
+                href="#contact"
+                className="mt-10 inline-flex rounded-sm bg-white px-10 py-2.5 text-sm font-medium text-ice hover:bg-white/90"
+              >
+                Buy Now
+              </a>
+            </Reveal>
           </div>
         </section>
 
         <section id="find" className="relative z-10 -mt-px scroll-mt-20 bg-white">
           <div className="mx-auto max-w-[1100px] px-6 py-16 md:py-20">
-            <p className="text-base font-medium text-ice">Where to Find Us</p>
-            <h2 className="mt-1 text-3xl font-semibold tracking-wide text-ice sm:text-4xl">
-              FIND OUR ICE IN MORE PLACES THAN EVER BEFORE
-            </h2>
+            <Reveal>
+              <p className="text-base font-medium text-ice">Where to Find Us</p>
+              <h2 className="mt-1 text-3xl font-semibold tracking-wide text-ice sm:text-4xl">
+                FIND OUR ICE IN MORE PLACES THAN EVER BEFORE
+              </h2>
+            </Reveal>
             <div className="mt-12 grid gap-12 sm:grid-cols-2">
-              {places.map((place) => (
-                <article key={place.id} id={place.id} className="scroll-mt-24 px-4 text-center">
+              {places.map((place, index) => (
+                <article key={place.id} id={place.id} className="scroll-mt-24">
+                  <Reveal delay={index * 90} className="px-4 text-center">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center text-ice">
                     <PlaceIcon name={place.icon} />
                   </div>
@@ -181,6 +195,7 @@ export default function Home() {
                     {place.title}
                   </h3>
                   <p className="mx-auto mt-3 max-w-sm text-[15px] leading-7 text-ice">{place.body}</p>
+                  </Reveal>
                 </article>
               ))}
             </div>
@@ -188,7 +203,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="relative z-10 -mt-px scroll-mt-20 bg-ice py-16 text-white md:py-20">
-          <div className="mx-auto max-w-[1100px] px-6 text-center">
+          <Reveal className="mx-auto max-w-[1100px] px-6 text-center">
             <p className="text-base font-medium">Contact Us</p>
             <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">WE ARE COOL FOR YOU</h2>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-7 sm:text-base">
@@ -196,7 +211,7 @@ export default function Home() {
               here for you.
             </p>
             <ContactForm />
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />

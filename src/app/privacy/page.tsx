@@ -34,7 +34,7 @@ export default function PrivacyPage() {
           <p className="mt-3 text-sm leading-7">
             Phone: <a href="tel:+15573423423">557 - 3ICE (423)</a>
             <br />
-            Email: <a href="mailto:info@PureIceBahamas.com">info@PureIceBahamas.com</a>
+            Email: <a href="mailto:info@pureicebahamas.com">info@pureicebahamas.com</a>
           </p>
           <p className="mt-10">
             <Link href="/" className="text-sm font-medium underline">
