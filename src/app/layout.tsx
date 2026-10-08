@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Arimo } from "next/font/google";
+import { Arimo, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const arimo = Arimo({
   variable: "--font-arimo",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -16,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${arimo.variable} h-full antialiased`}>
+    <html lang="en" className={`${arimo.variable} ${montserrat.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <noscript>
           <style>{`.scroll-rise{opacity:1!important;transform:none!important}`}</style>

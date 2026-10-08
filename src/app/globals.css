@@ -4,6 +4,7 @@
   --color-ice: #2ba9de;
   --color-ice-deep: #1e96c8;
   --font-sans: var(--font-arimo);
+  --font-logo: var(--font-montserrat), sans-serif;
 }
 
 html {

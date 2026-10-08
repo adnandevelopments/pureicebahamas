@@ -18,7 +18,7 @@ const places = [
     id: "delivery",
     title: "Late Night Delivery",
     icon: "bags",
-    body: "Hosting a major evening event and want to avoid running out of ice? don't worry, we have you covered. With our first-of-a kind late night delivery ice service, running out of ice at night is now a thing of the past.",
+    body: "Hosting a major evening event and want to avoid running out of ice? don't worry, we have you covered. With our first-of-a kind ice delivery service, running out of ice at night is now a thing of the past.",
   },
   {
     id: "hospitality",
@@ -41,9 +41,9 @@ const places = [
 ] as const;
 
 const bags = [
-  { src: "/images/ice10.png", label: "10 Pounds", width: 900, height: 1260, className: "h-28 sm:h-56" },
-  { src: "/images/ice20.png", label: "20 Pounds", width: 1236, height: 1732, className: "h-32 sm:h-72" },
-  { src: "/images/ice40.png", label: "40 Pounds", width: 1624, height: 2053, className: "h-36 sm:h-80" },
+  { src: "/images/ice10.png", label: "10 Pounds", use: "Home Use", width: 900, height: 1260, className: "h-28 sm:h-56" },
+  { src: "/images/ice20.png", label: "20 Pounds", use: "Parties", width: 1236, height: 1732, className: "h-32 sm:h-72" },
+  { src: "/images/ice40.png", label: "40 Pounds", use: "Commercial", width: 1624, height: 2053, className: "h-36 sm:h-80" },
 ];
 
 export default function Home() {
@@ -59,20 +59,32 @@ export default function Home() {
             height={848}
             priority
             sizes="100vw"
-            className="block h-[300px] w-full object-cover object-[center_35%] sm:h-[380px] md:h-auto md:object-contain"
+            className="block h-[520px] w-full object-cover object-[center_30%] sm:h-[560px] md:h-auto md:object-contain"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent via-ice/30 to-ice sm:h-28 md:h-56" />
-          <div className="absolute inset-0 flex items-center pb-8 sm:pb-12 md:pb-24">
-            <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-6 md:px-10">
-              <p className="hero-line text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
-                KEEPING YOU
-              </p>
-              <p className="hero-cool mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:220ms] sm:text-7xl md:text-8xl">
-                COOL
-              </p>
-              <p className="hero-line mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:520ms] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
-                in the <span className="uppercase">Bahamas</span>
-              </p>
+          <div className="absolute inset-0 flex items-start pt-8 sm:pt-12 md:items-center md:pt-0 md:pb-40">
+            <div className="mx-auto grid w-full max-w-[1200px] items-center gap-5 px-5 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:px-10">
+              <div className="font-logo">
+                <p className="hero-line text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
+                  KEEPING YOU
+                </p>
+                <p className="hero-cool mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:220ms] sm:text-7xl md:text-8xl">
+                  COOL
+                </p>
+                <p className="hero-line mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:520ms] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
+                  in the <span className="uppercase">Bahamas</span>
+                </p>
+              </div>
+              <div className="hero-line max-w-md text-white [text-shadow:0_2px_12px_rgba(0,40,80,0.85)] [animation-delay:680ms] md:justify-self-end">
+                <p className="text-base font-bold leading-snug sm:text-lg md:text-xl">
+                  Premium Bagged Ice and Reliable Delivery in Nassau.
+                </p>
+                <p className="mt-2 text-sm font-bold leading-6 sm:mt-3 sm:text-base sm:leading-7">
+                  Pure Ice supplies crystal-clear bagged ice to hotels, restaurants, bars, retailers, events,
+                  boats and homes throughout Nassau. From scheduled commercial restocking to last-minute
+                  evening deliveries, we help keep The Bahamas cool.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -88,22 +100,18 @@ export default function Home() {
             />
             <div className="load-rise [animation-delay:420ms]">
               <p className="text-base font-medium">About Us</p>
-              <h1 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
-                WE&apos;VE GOT HIGH STANDARDS
+              <h1 className="mt-1 text-2xl font-semibold tracking-wide sm:text-3xl">
+                LOCALLY PRODUCED. PROFESSIONALLY DELIVERED.
               </h1>
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-white sm:text-base">
                 <p>
-                  Pure Ice has arrived in the Bahamas to serve clients with the purest and clearest ice.
-                  With our local production facilities and our all-inclusive ice program, we are happy to
-                  serve Nassau&apos;s ice needs.
+                  Pure Ice provides reliable ice solutions for businesses and individuals across Nassau. We
+                  combine quality ice, responsive local service and flexible delivery options to make sure our
+                  customers have the ice they need, when they need it.
                 </p>
                 <p>
-                  We are passionate about quality; therefore, we collaborate with similarly passionate
-                  restaurants and bars, retailers, hotels and independent businesses.
-                </p>
-                <p>
-                  If you would like to learn more about Pure Ice, please contact us. Cheers to keeping you
-                  cool in the Bahamas!
+                  Whether you operate a busy hotel, stock ice for retail customers, plan special events or
+                  simply need ice delivered to your home or boat, Pure Ice is ready to help.
                 </p>
               </div>
             </div>
@@ -129,20 +137,24 @@ export default function Home() {
                     height={bag.height}
                     className={`mx-auto w-auto max-w-full object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
                   />
-                  <figcaption className="mt-4 text-sm font-medium sm:text-lg">{bag.label}</figcaption>
+                  <figcaption className="mt-4 text-sm font-medium sm:text-lg">
+                    {bag.label}
+                    <span className="mt-1 block text-xs font-semibold tracking-[0.14em] uppercase sm:text-sm">
+                      {bag.use}
+                    </span>
+                  </figcaption>
                 </figure>
                 </Reveal>
               ))}
             </div>
             <Reveal className="mx-auto mt-10 max-w-3xl space-y-4 text-left text-[15px] leading-7 text-white sm:text-base">
+              <h3 className="text-base font-semibold tracking-[0.04em] sm:text-lg">
+                RELIABLE ICE SUPPLY WITHOUT THE EQUIPMENT HEADACHES
+              </h3>
               <p>
-                You no longer have to choose between purchasing a costly, maintenance-intensive piece of
-                equipment or entering into a standard ice machine rental or leasing contract, both of which
-                require you to pay for maintenance, repairs, and bagged ice if your machine breaks down.
-              </p>
-              <p>
-                We provide a cooler answer. Our all-inclusive ice program includes top-notch ice freezers
-                that will keep your ice cool, as well as restocking and equipment repairs.
+                Our all-inclusive commercial ice program provides your business with a quality freezer,
+                professional installation, ongoing maintenance, repairs and convenient ice restocking. You
+                focus on serving your customers, we take care of keeping your ice supply ready.
               </p>
             </Reveal>
           </div>
@@ -152,7 +164,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl px-6 text-center">
             <Reveal>
               <h2 className="text-left text-xl font-semibold tracking-[0.08em] sm:text-center sm:text-2xl">
-                OUR ALL-INCLUSIVE PROGRAM HIGHLIGHTS
+                OUR ALL-INCLUSIVE COMMERCIAL ICE PROGRAM HIGHLIGHTS
               </h2>
             </Reveal>
             <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[15px] sm:text-base">
