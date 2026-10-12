@@ -86,12 +86,24 @@ export function Footer() {
             >
               <WhatsappIcon size={26} />
             </a>
-            <span aria-label="Facebook" className="inline-flex">
+            <a
+              href="https://www.facebook.com/profile.php?id=61557694084589"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex hover:text-white/80"
+            >
               <FacebookIcon size={26} />
-            </span>
-            <span aria-label="Instagram" className="inline-flex">
+            </a>
+            <a
+              href="https://www.instagram.com/pureicebahamas?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw=="
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex hover:text-white/80"
+            >
               <InstagramIcon size={26} />
-            </span>
+            </a>
           </div>
         </div>
       </Reveal>
