@@ -41,9 +41,30 @@ const places = [
 ] as const;
 
 const bags = [
-  { src: "/images/ice10.png", label: "10 Pounds", use: "Home Use", width: 900, height: 1260, className: "h-28 sm:h-56" },
-  { src: "/images/ice20.png", label: "20 Pounds", use: "Parties", width: 1236, height: 1732, className: "h-32 sm:h-72" },
-  { src: "/images/ice40.png", label: "40 Pounds", use: "Commercial", width: 1624, height: 2053, className: "h-36 sm:h-80" },
+  {
+    src: "/images/ice10.png",
+    label: "10 Pounds",
+    use: "Home Use",
+    width: 900,
+    height: 1260,
+    className: "h-28 sm:h-56",
+  },
+  {
+    src: "/images/ice20.png",
+    label: "20 Pounds",
+    use: "Parties",
+    width: 1236,
+    height: 1732,
+    className: "h-32 sm:h-72",
+  },
+  {
+    src: "/images/ice40.png",
+    label: "40 Pounds",
+    use: "Commercial",
+    width: 1624,
+    height: 2053,
+    className: "h-36 sm:h-80",
+  },
 ];
 
 export default function Home() {
@@ -61,8 +82,8 @@ export default function Home() {
             sizes="100vw"
             className="block h-[560px] w-full object-cover object-[center_28%] sm:h-[620px] md:h-auto md:min-h-[640px] md:object-cover md:object-center"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0870a4]/88 via-[#0870a4]/55 to-[#0870a4]/20" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-ice" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0870a4]/10 via-[#0870a4]/2 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/2 via-transparent to-ice" />
           <div className="absolute inset-0 flex items-center">
             <div className="mx-auto grid w-full max-w-[1200px] items-center gap-8 px-5 py-12 sm:px-6 md:grid-cols-2 md:gap-12 md:px-10 md:pb-28">
               <div className="font-display text-left text-white">
@@ -73,7 +94,8 @@ export default function Home() {
                   COOL
                 </p>
                 <p className="hero-line mt-2 text-xl font-medium tracking-[0.08em] [animation-delay:520ms] sm:text-2xl md:text-[1.75rem]">
-                  in the <span className="font-semibold uppercase">Bahamas</span>
+                  in the{" "}
+                  <span className="font-semibold uppercase">Bahamas</span>
                 </p>
               </div>
               <div className="hero-line w-full max-w-lg text-left text-white [animation-delay:680ms] md:justify-self-end">
@@ -82,9 +104,11 @@ export default function Home() {
                     Premium Bagged Ice and Reliable Delivery in Nassau.
                   </p>
                   <p className="body-copy mt-3 text-[1rem] leading-relaxed text-white sm:text-[1.05rem]">
-                    Pure Ice supplies crystal-clear bagged ice to hotels, restaurants, bars, retailers,
-                    events, boats and homes throughout Nassau. From scheduled commercial restocking to
-                    last-minute evening deliveries, we help keep The Bahamas cool.
+                    Pure Ice supplies crystal-clear bagged ice to hotels,
+                    restaurants, bars, retailers, events, boats and homes
+                    throughout Nassau. From scheduled commercial restocking to
+                    last-minute evening deliveries, we help keep The Bahamas
+                    cool.
                   </p>
                 </div>
               </div>
@@ -92,7 +116,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="relative z-10 -mt-px scroll-mt-20 bg-ice text-white">
+        <section
+          id="about"
+          className="relative z-10 -mt-px scroll-mt-20 bg-ice text-white"
+        >
           <div className="mx-auto grid max-w-[1100px] items-center gap-8 px-6 pb-16 md:grid-cols-[0.9fr_1.1fr] md:pb-20">
             <Image
               src="/images/iceBag1.png"
@@ -108,43 +135,54 @@ export default function Home() {
               </h1>
               <div className="body-copy mt-5 space-y-4 text-white">
                 <p>
-                  Pure Ice provides reliable ice solutions for businesses and individuals across Nassau. We
-                  combine quality ice, responsive local service and flexible delivery options to make sure our
+                  Pure Ice provides reliable ice solutions for businesses and
+                  individuals across Nassau. We combine quality ice, responsive
+                  local service and flexible delivery options to make sure our
                   customers have the ice they need, when they need it.
                 </p>
                 <p>
-                  Whether you operate a busy hotel, stock ice for retail customers, plan special events or
-                  simply need ice delivered to your home or boat, Pure Ice is ready to help.
+                  Whether you operate a busy hotel, stock ice for retail
+                  customers, plan special events or simply need ice delivered to
+                  your home or boat, Pure Ice is ready to help.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="products" className="relative z-10 scroll-mt-20 bg-ice pt-6 pb-16 text-white md:pt-8">
+        <section
+          id="products"
+          className="relative z-10 scroll-mt-20 bg-ice pt-6 pb-16 text-white md:pt-8"
+        >
           <div className="mx-auto max-w-[1100px] px-6">
             <Reveal>
               <p className="eyebrow">Our Products</p>
-              <h2 className="section-title mt-2 text-white">HOW COOL DO YOU WANT TO BE?</h2>
+              <h2 className="section-title mt-2 text-white">
+                HOW COOL DO YOU WANT TO BE?
+              </h2>
             </Reveal>
             <div className="mt-10 grid grid-cols-3 items-end gap-2 sm:gap-8">
               {bags.map((bag, index) => (
-                <Reveal key={bag.label} delay={index * 90} className="min-w-0 text-center">
-                <figure>
-                  <Image
-                    src={bag.src}
-                    alt={`${bag.label} bag of Pure Ice`}
-                    width={bag.width}
-                    height={bag.height}
-                    className={`mx-auto w-auto max-w-full object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
-                  />
-                  <figcaption className="font-display mt-4 text-base font-semibold tracking-wide sm:text-lg">
-                    {bag.label}
-                    <span className="mt-1 block text-xs font-semibold tracking-[0.14em] uppercase opacity-90 sm:text-sm">
-                      {bag.use}
-                    </span>
-                  </figcaption>
-                </figure>
+                <Reveal
+                  key={bag.label}
+                  delay={index * 90}
+                  className="min-w-0 text-center"
+                >
+                  <figure>
+                    <Image
+                      src={bag.src}
+                      alt={`${bag.label} bag of Pure Ice`}
+                      width={bag.width}
+                      height={bag.height}
+                      className={`mx-auto w-auto max-w-full object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
+                    />
+                    <figcaption className="font-display mt-4 text-base font-semibold tracking-wide sm:text-lg">
+                      {bag.label}
+                      <span className="mt-1 block text-xs font-semibold tracking-[0.14em] uppercase opacity-90 sm:text-sm">
+                        {bag.use}
+                      </span>
+                    </figcaption>
+                  </figure>
                 </Reveal>
               ))}
             </div>
@@ -153,9 +191,11 @@ export default function Home() {
                 RELIABLE ICE SUPPLY WITHOUT THE EQUIPMENT HEADACHES
               </h3>
               <p className="body-copy text-white">
-                Our all-inclusive commercial ice program provides your business with a quality freezer,
-                professional installation, ongoing maintenance, repairs and convenient ice restocking. You
-                focus on serving your customers, we take care of keeping your ice supply ready.
+                Our all-inclusive commercial ice program provides your business
+                with a quality freezer, professional installation, ongoing
+                maintenance, repairs and convenient ice restocking. You focus on
+                serving your customers, we take care of keeping your ice supply
+                ready.
               </p>
             </Reveal>
           </div>
@@ -171,7 +211,10 @@ export default function Home() {
             <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[1.05rem] leading-relaxed">
               {highlights.map((item, index) => (
                 <li key={item.title}>
-                  <Reveal delay={index * 70} className="flex items-center gap-4">
+                  <Reveal
+                    delay={index * 70}
+                    className="flex items-center gap-4"
+                  >
                     <HighlightIcon name={item.icon} />
                     <span className="font-medium">{item.title}</span>
                   </Reveal>
@@ -189,7 +232,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="find" className="relative z-10 -mt-px scroll-mt-20 bg-white">
+        <section
+          id="find"
+          className="relative z-10 -mt-px scroll-mt-20 bg-white"
+        >
           <div className="mx-auto max-w-[1100px] px-6 py-16 md:py-20">
             <Reveal>
               <p className="eyebrow text-ice">Where to Find Us</p>
@@ -201,13 +247,15 @@ export default function Home() {
               {places.map((place, index) => (
                 <article key={place.id} id={place.id} className="scroll-mt-24">
                   <Reveal delay={index * 90} className="px-4 text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center text-ice">
-                    <PlaceIcon name={place.icon} />
-                  </div>
-                  <h3 className="font-display text-base font-semibold tracking-[0.12em] text-ice uppercase sm:text-lg">
-                    {place.title}
-                  </h3>
-                  <p className="body-copy mx-auto mt-3 max-w-sm text-ice">{place.body}</p>
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center text-ice">
+                      <PlaceIcon name={place.icon} />
+                    </div>
+                    <h3 className="font-display text-base font-semibold tracking-[0.12em] text-ice uppercase sm:text-lg">
+                      {place.title}
+                    </h3>
+                    <p className="body-copy mx-auto mt-3 max-w-sm text-ice">
+                      {place.body}
+                    </p>
                   </Reveal>
                 </article>
               ))}
@@ -215,13 +263,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="relative z-10 -mt-px scroll-mt-20 bg-ice py-16 text-white md:py-20">
+        <section
+          id="contact"
+          className="relative z-10 -mt-px scroll-mt-20 bg-ice py-16 text-white md:py-20"
+        >
           <Reveal className="mx-auto max-w-[1100px] px-6 text-center">
             <p className="eyebrow">Contact Us</p>
-            <h2 className="section-title mt-2 text-white">WE ARE COOL FOR YOU</h2>
+            <h2 className="section-title mt-2 text-white">
+              WE ARE COOL FOR YOU
+            </h2>
             <p className="body-copy mx-auto mt-4 max-w-xl text-white">
-              Let us help you stay cool. Whether it is an all-inclusive ice program or a delivery, we are
-              here for you.
+              Let us help you stay cool. Whether it is an all-inclusive ice
+              program or a delivery, we are here for you.
             </p>
             <ContactForm />
           </Reveal>
@@ -231,4 +284,3 @@ export default function Home() {
     </>
   );
 }
-
