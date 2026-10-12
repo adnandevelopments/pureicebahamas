@@ -61,9 +61,10 @@ export default function Home() {
             sizes="100vw"
             className="block h-[520px] w-full object-cover object-[center_30%] sm:h-[560px] md:h-auto md:object-contain"
           />
+          <div className="pointer-events-none absolute inset-0 bg-black/15" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent via-ice/30 to-ice sm:h-28 md:h-56" />
           <div className="absolute inset-0 flex items-start pt-8 sm:pt-12 md:items-center md:pt-0 md:pb-40">
-            <div className="mx-auto grid w-full max-w-[1200px] items-center gap-5 px-5 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:px-10">
+            <div className="mx-auto grid w-full max-w-[1200px] items-start gap-5 px-5 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:px-10">
               <div className="font-logo">
                 <p className="hero-line text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
                   KEEPING YOU
@@ -75,11 +76,11 @@ export default function Home() {
                   in the <span className="uppercase">Bahamas</span>
                 </p>
               </div>
-              <div className="hero-line max-w-md text-white [text-shadow:0_2px_12px_rgba(0,40,80,0.85)] [animation-delay:680ms] md:justify-self-end">
-                <p className="text-base font-bold leading-snug sm:text-lg md:text-xl">
+              <div className="hero-line max-w-md text-white [animation-delay:680ms] md:justify-self-end">
+                <p className="text-lg font-bold leading-snug sm:text-xl md:text-2xl">
                   Premium Bagged Ice and Reliable Delivery in Nassau.
                 </p>
-                <p className="mt-2 text-sm font-bold leading-6 sm:mt-3 sm:text-base sm:leading-7">
+                <p className="mt-2 text-base font-bold leading-6 sm:mt-3 sm:text-lg sm:leading-7 md:text-xl">
                   Pure Ice supplies crystal-clear bagged ice to hotels, restaurants, bars, retailers, events,
                   boats and homes throughout Nassau. From scheduled commercial restocking to last-minute
                   evening deliveries, we help keep The Bahamas cool.
