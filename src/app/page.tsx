@@ -51,7 +51,7 @@ export default function Home() {
     <>
       <Header />
       <main className="bg-ice">
-        <section className="relative text-white">
+        <section className="relative overflow-hidden text-white">
           <Image
             src="/images/bg1.png"
             alt=""
@@ -59,32 +59,34 @@ export default function Home() {
             height={848}
             priority
             sizes="100vw"
-            className="block h-[520px] w-full object-cover object-[center_30%] sm:h-[560px] md:h-auto md:object-contain"
+            className="block h-[560px] w-full object-cover object-[center_28%] sm:h-[620px] md:h-auto md:min-h-[640px] md:object-cover md:object-center"
           />
-          <div className="pointer-events-none absolute inset-0 bg-black/15" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent via-ice/30 to-ice sm:h-28 md:h-56" />
-          <div className="absolute inset-0 flex items-start pt-8 sm:pt-12 md:items-center md:pt-0 md:pb-40">
-            <div className="mx-auto grid w-full max-w-[1200px] items-start gap-5 px-5 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:px-10">
-              <div className="font-logo">
-                <p className="hero-line text-2xl font-bold tracking-[0.12em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-5xl md:tracking-[0.18em]">
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0870a4]/88 via-[#0870a4]/55 to-[#0870a4]/20" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-ice" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="mx-auto grid w-full max-w-[1200px] items-center gap-8 px-5 py-12 sm:px-6 md:grid-cols-2 md:gap-12 md:px-10 md:pb-28">
+              <div className="font-display text-left text-white">
+                <p className="hero-line text-[1.5rem] font-semibold tracking-[0.14em] [animation-delay:80ms] sm:text-4xl sm:tracking-[0.16em] md:text-[2.5rem]">
                   KEEPING YOU
                 </p>
-                <p className="hero-cool mt-1 text-5xl font-bold tracking-wide [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:220ms] sm:text-7xl md:text-8xl">
+                <p className="hero-cool mt-1 text-6xl font-extrabold tracking-wide [animation-delay:220ms] sm:text-7xl md:text-[6rem] md:leading-none">
                   COOL
                 </p>
-                <p className="hero-line mt-2 text-lg font-bold tracking-[0.08em] [text-shadow:0_2px_10px_rgba(0,70,120,0.35)] [animation-delay:520ms] sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
-                  in the <span className="uppercase">Bahamas</span>
+                <p className="hero-line mt-2 text-xl font-medium tracking-[0.08em] [animation-delay:520ms] sm:text-2xl md:text-[1.75rem]">
+                  in the <span className="font-semibold uppercase">Bahamas</span>
                 </p>
               </div>
-              <div className="hero-line max-w-md text-white [animation-delay:680ms] md:justify-self-end">
-                <p className="text-lg font-bold leading-snug sm:text-xl md:text-2xl">
-                  Premium Bagged Ice and Reliable Delivery in Nassau.
-                </p>
-                <p className="mt-2 text-base font-bold leading-6 sm:mt-3 sm:text-lg sm:leading-7 md:text-xl">
-                  Pure Ice supplies crystal-clear bagged ice to hotels, restaurants, bars, retailers, events,
-                  boats and homes throughout Nassau. From scheduled commercial restocking to last-minute
-                  evening deliveries, we help keep The Bahamas cool.
-                </p>
+              <div className="hero-line w-full max-w-lg text-left text-white [animation-delay:680ms] md:justify-self-end">
+                <div className="rounded-lg border border-white/25 bg-[#065a86]/82 px-5 py-5 sm:px-6 sm:py-6">
+                  <p className="font-display text-lg font-semibold leading-snug sm:text-xl">
+                    Premium Bagged Ice and Reliable Delivery in Nassau.
+                  </p>
+                  <p className="body-copy mt-3 text-[1rem] leading-relaxed text-white sm:text-[1.05rem]">
+                    Pure Ice supplies crystal-clear bagged ice to hotels, restaurants, bars, retailers,
+                    events, boats and homes throughout Nassau. From scheduled commercial restocking to
+                    last-minute evening deliveries, we help keep The Bahamas cool.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -100,11 +102,11 @@ export default function Home() {
               className="load-rise relative z-10 mx-auto -mt-8 h-auto w-full max-w-[260px] [animation-delay:280ms] sm:-mt-[8vw] sm:max-w-[420px] md:-mt-[11vw] md:max-w-md"
             />
             <div className="load-rise [animation-delay:420ms]">
-              <p className="text-base font-medium">About Us</p>
-              <h1 className="mt-1 text-2xl font-semibold tracking-wide sm:text-3xl">
+              <p className="eyebrow">About Us</p>
+              <h1 className="section-title mt-2 text-white">
                 LOCALLY PRODUCED. PROFESSIONALLY DELIVERED.
               </h1>
-              <div className="mt-5 space-y-4 text-[15px] leading-7 text-white sm:text-base">
+              <div className="body-copy mt-5 space-y-4 text-white">
                 <p>
                   Pure Ice provides reliable ice solutions for businesses and individuals across Nassau. We
                   combine quality ice, responsive local service and flexible delivery options to make sure our
@@ -122,10 +124,8 @@ export default function Home() {
         <section id="products" className="relative z-10 scroll-mt-20 bg-ice pt-6 pb-16 text-white md:pt-8">
           <div className="mx-auto max-w-[1100px] px-6">
             <Reveal>
-              <p className="text-base font-medium">Our Products</p>
-              <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">
-                HOW COOL DO YOU WANT TO BE?
-              </h2>
+              <p className="eyebrow">Our Products</p>
+              <h2 className="section-title mt-2 text-white">HOW COOL DO YOU WANT TO BE?</h2>
             </Reveal>
             <div className="mt-10 grid grid-cols-3 items-end gap-2 sm:gap-8">
               {bags.map((bag, index) => (
@@ -138,9 +138,9 @@ export default function Home() {
                     height={bag.height}
                     className={`mx-auto w-auto max-w-full object-contain drop-shadow-[0_18px_18px_rgba(0,70,110,0.35)] ${bag.className}`}
                   />
-                  <figcaption className="mt-4 text-sm font-medium sm:text-lg">
+                  <figcaption className="font-display mt-4 text-base font-semibold tracking-wide sm:text-lg">
                     {bag.label}
-                    <span className="mt-1 block text-xs font-semibold tracking-[0.14em] uppercase sm:text-sm">
+                    <span className="mt-1 block text-xs font-semibold tracking-[0.14em] uppercase opacity-90 sm:text-sm">
                       {bag.use}
                     </span>
                   </figcaption>
@@ -148,11 +148,11 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-            <Reveal className="mx-auto mt-10 max-w-3xl space-y-4 text-left text-[15px] leading-7 text-white sm:text-base">
-              <h3 className="text-base font-semibold tracking-[0.04em] sm:text-lg">
+            <Reveal className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-white">
+              <h3 className="font-display text-lg font-semibold tracking-[0.04em] sm:text-xl">
                 RELIABLE ICE SUPPLY WITHOUT THE EQUIPMENT HEADACHES
               </h3>
-              <p>
+              <p className="body-copy text-white">
                 Our all-inclusive commercial ice program provides your business with a quality freezer,
                 professional installation, ongoing maintenance, repairs and convenient ice restocking. You
                 focus on serving your customers, we take care of keeping your ice supply ready.
@@ -164,16 +164,16 @@ export default function Home() {
         <section className="relative z-10 -mt-px bg-ice pb-20 text-white">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <Reveal>
-              <h2 className="text-left text-xl font-semibold tracking-[0.08em] sm:text-center sm:text-2xl">
+              <h2 className="section-title text-center text-white">
                 OUR ALL-INCLUSIVE COMMERCIAL ICE PROGRAM HIGHLIGHTS
               </h2>
             </Reveal>
-            <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[15px] sm:text-base">
+            <ul className="mx-auto mt-8 max-w-md space-y-4 text-left text-[1.05rem] leading-relaxed">
               {highlights.map((item, index) => (
                 <li key={item.title}>
                   <Reveal delay={index * 70} className="flex items-center gap-4">
                     <HighlightIcon name={item.icon} />
-                    <span>{item.title}</span>
+                    <span className="font-medium">{item.title}</span>
                   </Reveal>
                 </li>
               ))}
@@ -181,7 +181,7 @@ export default function Home() {
             <Reveal>
               <a
                 href="#contact"
-                className="mt-10 inline-flex rounded-sm bg-white px-10 py-2.5 text-sm font-medium text-ice hover:bg-white/90"
+                className="font-ui mt-10 inline-flex rounded-sm bg-white px-10 py-3 text-base font-semibold tracking-wide text-ice hover:bg-white/90"
               >
                 Buy Now
               </a>
@@ -192,8 +192,8 @@ export default function Home() {
         <section id="find" className="relative z-10 -mt-px scroll-mt-20 bg-white">
           <div className="mx-auto max-w-[1100px] px-6 py-16 md:py-20">
             <Reveal>
-              <p className="text-base font-medium text-ice">Where to Find Us</p>
-              <h2 className="mt-1 text-3xl font-semibold tracking-wide text-ice sm:text-4xl">
+              <p className="eyebrow text-ice">Where to Find Us</p>
+              <h2 className="section-title mt-2 text-ice">
                 FIND OUR ICE IN MORE PLACES THAN EVER BEFORE
               </h2>
             </Reveal>
@@ -204,10 +204,10 @@ export default function Home() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center text-ice">
                     <PlaceIcon name={place.icon} />
                   </div>
-                  <h3 className="text-base font-semibold tracking-[0.12em] text-ice uppercase sm:text-lg">
+                  <h3 className="font-display text-base font-semibold tracking-[0.12em] text-ice uppercase sm:text-lg">
                     {place.title}
                   </h3>
-                  <p className="mx-auto mt-3 max-w-sm text-[15px] leading-7 text-ice">{place.body}</p>
+                  <p className="body-copy mx-auto mt-3 max-w-sm text-ice">{place.body}</p>
                   </Reveal>
                 </article>
               ))}
@@ -217,9 +217,9 @@ export default function Home() {
 
         <section id="contact" className="relative z-10 -mt-px scroll-mt-20 bg-ice py-16 text-white md:py-20">
           <Reveal className="mx-auto max-w-[1100px] px-6 text-center">
-            <p className="text-base font-medium">Contact Us</p>
-            <h2 className="mt-1 text-3xl font-semibold tracking-wide sm:text-4xl">WE ARE COOL FOR YOU</h2>
-            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-7 sm:text-base">
+            <p className="eyebrow">Contact Us</p>
+            <h2 className="section-title mt-2 text-white">WE ARE COOL FOR YOU</h2>
+            <p className="body-copy mx-auto mt-4 max-w-xl text-white">
               Let us help you stay cool. Whether it is an all-inclusive ice program or a delivery, we are
               here for you.
             </p>

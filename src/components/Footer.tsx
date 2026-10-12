@@ -20,13 +20,13 @@ export function Footer() {
         sizes="100vw"
         className="object-cover object-bottom"
       />
-      <div className="pointer-events-none absolute inset-0 bg-[#0870a4]/15" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ice via-ice/75 to-transparent" />
-      <Reveal className="relative z-10 mx-auto grid w-full max-w-[1100px] gap-10 px-6 pt-12 pb-8 text-base drop-shadow-[0_1px_2px_rgba(0,40,80,0.45)] sm:grid-cols-2 lg:grid-cols-4">
+      <div className="pointer-events-none absolute inset-0 bg-[#065a86]/55" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ice via-ice/80 to-transparent" />
+      <Reveal className="relative z-10 mx-auto grid w-full max-w-[1100px] gap-10 px-6 pt-12 pb-8 text-base sm:grid-cols-2 lg:grid-cols-4">
         <Logo className="h-16 w-auto" />
 
         <div>
-          <p className="text-sm font-semibold tracking-[0.16em]">ABOUT</p>
+          <p className="font-ui text-sm font-semibold tracking-[0.16em]">ABOUT</p>
           <ul className="mt-4 space-y-2">
             <li>
               <Link href="/#about" className="hover:text-white/80">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold tracking-[0.16em]">CONTACT US</p>
+          <p className="font-ui text-sm font-semibold tracking-[0.16em]">CONTACT US</p>
           <ul className="mt-4 space-y-2">
             <li>
               <a
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold tracking-[0.16em]">
+          <p className="font-ui text-sm font-semibold tracking-[0.16em]">
             WE ARE SOCIAL
           </p>
           <div className="mt-4 flex gap-3">
@@ -108,7 +108,7 @@ export function Footer() {
         </div>
       </Reveal>
 
-      <p className="relative z-10 mt-auto px-6 pb-5 text-center text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,40,80,0.55)]">
+      <p className="relative z-10 mt-auto px-6 pb-5 text-center text-sm font-medium text-white">
         <Link href="/privacy" className="hover:underline">
           Privacy Policy
         </Link>

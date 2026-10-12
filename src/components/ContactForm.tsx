@@ -92,7 +92,7 @@ export function ContactForm() {
   }
 
   const inputClass = (name: FieldName) =>
-    `h-12 w-full rounded-sm border bg-white/25 px-4 text-sm text-white placeholder:text-white/90 outline-none transition-colors focus:bg-white/35 ${
+    `h-12 w-full rounded-sm border bg-white/25 px-4 text-[15px] text-white placeholder:text-white/85 outline-none transition-colors focus:bg-white/35 ${
       errors[name]
         ? "border-red-200"
         : "border-white/30 hover:border-white focus:border-white"
@@ -127,7 +127,7 @@ export function ContactForm() {
               aria-label="Your Message"
               aria-invalid={Boolean(errors.message)}
               onChange={() => clearError("message")}
-              className={`min-h-56 w-full resize-none rounded-sm border bg-white/25 px-4 py-3 text-sm text-white placeholder:text-white/90 outline-none transition-colors focus:bg-white/35 md:min-h-full ${
+              className={`min-h-56 w-full resize-none rounded-sm border bg-white/25 px-4 py-3 text-[15px] text-white placeholder:text-white/85 outline-none transition-colors focus:bg-white/35 md:min-h-full ${
                 errors.message ? "border-red-200" : "border-white/30 hover:border-white focus:border-white"
               }`}
             />
@@ -138,7 +138,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="rounded-sm bg-white px-8 py-2.5 text-sm font-medium text-ice hover:bg-white/90 disabled:opacity-70"
+            className="font-ui rounded-sm bg-white px-8 py-3 text-base font-semibold tracking-wide text-ice hover:bg-white/90 disabled:opacity-70"
           >
             {status === "sending" ? "Sending..." : "Send Message"}
           </button>

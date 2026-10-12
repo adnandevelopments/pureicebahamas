@@ -46,8 +46,10 @@ function ContactIcons({ className }: { className?: string }) {
 
 function menuClass(active: boolean, mobile = false) {
   return [
-    "relative inline-block w-fit uppercase",
-    mobile ? "text-[15px] font-medium tracking-[0.12em]" : "text-xs font-medium tracking-[0.14em]",
+    "font-ui relative inline-block w-fit uppercase",
+    mobile
+      ? "text-[16px] font-semibold tracking-[0.1em]"
+      : "text-[13px] font-semibold tracking-[0.12em] xl:text-sm",
     "after:absolute after:right-0 after:-bottom-1 after:left-0 after:h-0.5 after:origin-left after:bg-white after:transition-transform after:duration-200",
     active ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100",
   ].join(" ");

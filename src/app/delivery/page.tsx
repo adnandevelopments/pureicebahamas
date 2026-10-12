@@ -15,17 +15,17 @@ export default function LateNightDeliveryPage() {
       <Header />
       <main className="flex flex-1 flex-col bg-white text-ice">
         <section className="mx-auto w-full max-w-4xl flex-1 px-6 py-16 md:py-24">
-          <p className="load-rise text-lg sm:text-xl">Late Night Delivery</p>
-          <h1 className="load-rise mt-2 text-2xl font-semibold tracking-wide [animation-delay:140ms] sm:text-4xl">
+          <p className="eyebrow load-rise">Late Night Delivery</p>
+          <h1 className="section-title load-rise mt-2 [animation-delay:140ms]">
             STAY COOL AT NIGHT
           </h1>
-          <p className="load-rise mt-8 max-w-3xl text-[15px] leading-7 [animation-delay:260ms] sm:text-base">
+          <p className="body-copy load-rise mt-8 max-w-3xl [animation-delay:260ms]">
             Running out of ice at a late-night party or event? Simply call us or send us a WhatsApp
             message indicating how much ice you require and your location, and we will be there in no
             time.
           </p>
           <div className="load-rise mt-14 flex flex-col items-center gap-6 [animation-delay:400ms] sm:flex-row sm:gap-16">
-            <a href="tel:+15573423423" className="inline-flex items-center gap-3 text-base font-medium">
+            <a href="tel:+15573423423" className="inline-flex items-center gap-3 text-lg font-semibold">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ice text-white">
                 <PhoneIcon size={18} weight="fill" />
               </span>
@@ -33,7 +33,7 @@ export default function LateNightDeliveryPage() {
             </a>
             <a
               href="https://wa.me/15573423423"
-              className="inline-flex items-center gap-3 text-base font-medium"
+              className="inline-flex items-center gap-3 text-lg font-semibold"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ice text-white">
                 <WhatsappIcon size={18} />
